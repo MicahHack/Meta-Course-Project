@@ -1,4 +1,10 @@
-html, body {
-    height: 100%;
-    width: 100%;
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Anton', sans-serif;
+}
+
+h1 {
+    font-size: calc(1.625rem + 7vw) !important;
+}
+h2 {
+    font-size: calc(1.4rem + 3vw) !important;
 }
