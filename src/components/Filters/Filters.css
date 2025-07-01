@@ -1,0 +1,28 @@
+@keyframes fadeoutkeyframe {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.fadein {
+    opacity: 0% !important;
+    animation: fadeIn 1s ease-in-out infinite;
+}
+
+.fadeout {
+    opacity: 100% !important;
+    animation: fadeoutkeyframe 1.3s ease-in-out infinite;
+}
