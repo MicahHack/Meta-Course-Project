@@ -1,7 +1,7 @@
 .jesusiskingcontainer {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("GoldenSun.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("/GoldenSun.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
