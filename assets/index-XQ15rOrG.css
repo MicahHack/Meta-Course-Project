@@ -1,4 +1,4 @@
-@charset "UTF-8";:is(h1,h2,h3,h4,h5,h6){font-family:Anton,sans-serif}h1{font-size:calc(1.625rem + 7vw)!important}h2{font-size:calc(1.4rem + 3vw)!important}.jesusiskingcontainer{height:100vh;width:100%;background-image:linear-gradient(#0000001a,#0000004d),url(/GoldenSun.jpg);background-position:center;background-size:cover;background-attachment:fixed}/*!
+@charset "UTF-8";:is(h1,h2,h3,h4,h5,h6){font-family:Anton,sans-serif}h1{font-size:calc(1.625rem + 7vw)!important}h2{font-size:calc(1.4rem + 3vw)!important}.jesusiskingcontainer{height:100vh;width:100%;background-image:linear-gradient(#0000001a,#0000004d),url(/Meta-Course-Project/GoldenSun.jpg);background-position:center;background-size:cover;background-attachment:fixed}/*!
  * Bootstrap  v5.3.7 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
