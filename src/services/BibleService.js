@@ -52,8 +52,6 @@ export async function filterAvailableQuotes(testament, type) {
         return bibleQuotes;
     }
     if (testament === "Any") {
-        // eslint-disable-next-line no-debugger
-        debugger;
         bibleQuotes.forEach((item) => {
             if (item.type === type) {
                 newQuotesList.push(item);
@@ -61,8 +59,6 @@ export async function filterAvailableQuotes(testament, type) {
         })
     }
     if (type === "Any") {
-        // eslint-disable-next-line no-debugger
-        debugger;
         bibleQuotes.forEach((item) => {
             if (item.testament === testament) {
                 newQuotesList.push(item);
@@ -70,8 +66,6 @@ export async function filterAvailableQuotes(testament, type) {
         })
     }
     else {
-        // eslint-disable-next-line no-debugger
-        debugger;
         bibleQuotes.forEach((item) => {
             if (item.testament === testament && item.type === type) {
                 newQuotesList.push(item);
