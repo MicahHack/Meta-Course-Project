@@ -1,28 +1,27 @@
 @keyframes fadeoutkeyframe {
     from {
-        opacity: 100%;
+        opacity: 1;
     }
     to {
-        opacity: 0%;
+        opacity: 0;
     }
 }
 
-@keyframes fadeIn {
+@keyframes fadeinkeyframe {
     from {
-        opacity: 0%;
+        opacity: 0;
     }
-
     to {
-        opacity: 100%;
+        opacity: 1;
     }
-}
-
-.fadein {
-    opacity: 0% !important;
-    animation: fadeIn 1s ease-in-out infinite;
 }
 
 .fadeout {
-    opacity: 100% !important;
-    animation: fadeoutkeyframe 1.3s ease-in-out infinite;
+    opacity: 1;
+    animation: fadeoutkeyframe 0.25s ease-in-out forwards;
+}
+
+.fadein {
+    opacity: 0;
+    animation: fadeinkeyframe 0.25s ease-in-out forwards;
 }
