@@ -1,7 +1,7 @@
 export default function JesusCross() {
     return (
         <div className="mb-5">
-        <svg width="100" height="150" viewBox="0 0 100 150">
+            <svg width="100" height="150" viewBox="0 0 100 150">
             <path
                 d="
                     M 35 0
