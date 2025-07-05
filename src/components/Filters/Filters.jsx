@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Filters.css';
 import { getBibleQuote, filterAvailableQuotes } from './../../services/BibleService';
 import LoadingFilters from './LoadingFilters/LoadingFilters';
@@ -17,6 +17,26 @@ export default function Filters() {
     const [step, setStep] = useState(1);
     const [isTransitioning, setTransitioning] = useState(false);
     const [quote, setQuote] = useState({ reference: "", text: "" });
+
+    const filtersContainer = useRef(null);
+    let filtersContainerOpacity = useRef(0);
+
+    function animateFiltersComponent(visible) {
+        if (visible) {
+            if (filtersContainerOpacity.current < 1.0) {
+                filtersContainerOpacity.current += 0.1;
+                filtersContainer.current.style.opacity = filtersContainerOpacity.current;
+                requestAnimationFrame(() => { animateFiltersComponent(true) });
+            }
+        }
+        if (!visible) {
+            if (filtersContainerOpacity.current > 0.0) {
+                filtersContainerOpacity.current -= 0.1;
+                filtersContainer.current.style.opacity = filtersContainerOpacity.current;
+                requestAnimationFrame(() => { animateFiltersComponent(false) });
+            }
+        }
+    }
 
     function transitionSection(step) {
         setTransitioning(true);
@@ -44,12 +64,24 @@ export default function Filters() {
         let availableQuotes = await filterAvailableQuotes(selectedTestament.text, selectedType.text);
         let selectedQuote = await getBibleQuote(availableQuotes[Math.floor(Math.random() * availableQuotes.length + 1)].reference);
         setQuote({ reference: selectedQuote.reference, text: selectedQuote.text });
-        transitionSection(4);
+        //transitionSection(4);
     }
+
+    useEffect(() => {
+        filtersContainer.current.style.opacity = filtersContainerOpacity.current;
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 228) {
+                requestAnimationFrame(() => { animateFiltersComponent(true) });
+            }
+            if (window.scrollY <= 228) {
+                requestAnimationFrame(() => { animateFiltersComponent(false) });
+            }
+        })
+    }, []);
 
     return (
         <>
-            <div className="container-fluid mt-5 my-md-5 px-3 px-md-5">
+            <div ref={filtersContainer} style={{ transition: "0.25s ease-in-out" }} className="container-fluid mt-5 my-md-5 px-3 px-md-5">
                 <div className={`row align-items-center pt-5 py-md-5 ${isTransitioning ? "fadeout" : "fadein"}`}>
                     {/* Testaments section */}
                     {step == 1 &&
