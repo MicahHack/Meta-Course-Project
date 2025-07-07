@@ -74,10 +74,11 @@ export default function Filters() {
         filtersContainer.current.style.opacity = filtersContainerOpacity.current;
         // scroll event listener for fading filters in/out
         document.addEventListener("scroll", () => {
-            if (window.scrollY > 228) {
+            console.log(window.scrollY);
+            if (window.scrollY > 505) {
                 requestAnimationFrame(() => { animateFiltersComponent(true) });
             }
-            if (window.scrollY <= 228) {
+            if (window.scrollY <= 505) {
                 requestAnimationFrame(() => { animateFiltersComponent(false) });
             }
         })
@@ -85,8 +86,8 @@ export default function Filters() {
 
     return (
         <>
-            <div ref={filtersContainer} style={{ transition: "0.25s ease-in-out" }} className="container-fluid mt-5 my-md-5 px-3 px-md-5">
-                <div className={`row align-items-center pt-5 py-md-5 ${isTransitioning ? "fadeout" : "fadein"}`}>
+            <div ref={filtersContainer} style={{ height: "100vh", transition: "0.25s ease-in-out" }} className="container-fluid d-flex justify-content-center mt-5 my-md-5 px-3 px-md-5">
+                <div className={`row w-100 align-items-center pt-5 py-md-5 ${isTransitioning ? "fadeout" : "fadein"}`}>
                     {/* Testaments section */}
                     {step == 1 &&
                         <>
