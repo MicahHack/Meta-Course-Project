@@ -22,6 +22,7 @@ export default function Filters() {
     let filtersContainerOpacity = useRef(0);
 
     function animateFiltersComponent(visible) {
+        // If the Filters Component is well within view of the user, fade in, else fade out.
         if (visible) {
             if (filtersContainerOpacity.current < 1.0) {
                 filtersContainerOpacity.current += 0.1;
@@ -39,6 +40,7 @@ export default function Filters() {
     }
 
     function transitionSection(step) {
+        // Simple stepping procedure used for conditional rendering of HTML to show different filtering questions
         setTransitioning(true);
         setTimeout(() => { setStep(step); setTransitioning(false); }, 250);
     }
@@ -64,11 +66,13 @@ export default function Filters() {
         let availableQuotes = await filterAvailableQuotes(selectedTestament.text, selectedType.text);
         let selectedQuote = await getBibleQuote(availableQuotes[Math.floor(Math.random() * availableQuotes.length + 1)].reference);
         setQuote({ reference: selectedQuote.reference, text: selectedQuote.text });
-        //transitionSection(4);
+        transitionSection(4);
     }
 
     useEffect(() => {
+        // Set Filters to transparent.
         filtersContainer.current.style.opacity = filtersContainerOpacity.current;
+        // scroll event listener for fading filters in/out
         document.addEventListener("scroll", () => {
             if (window.scrollY > 228) {
                 requestAnimationFrame(() => { animateFiltersComponent(true) });
