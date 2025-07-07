@@ -1,12 +1,39 @@
-# React + Vite
+# Meta-Course-Project
+JESUS IS KING! and this project exists simply to glorify the name of Jesus.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React (with vite)
+- Javascript
+- HTML
+- CSS
+- npm
+- EsLint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## How it works
+1) Step one tries to narrow down the type of quote a user is looking for based off of emotion and bible testament
+2) Step two involves filtering the available hardcoded quotes to randomly return one of the quotes that have matched
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Getting started
+To start the project:
+	1) Ensure npm version 22.13.0 is being used
+	2) Run "npm install" from your terminal in the root project directory
+	3) Upon completion, start the projet using "npm run dev"
+
+Deploying to Github Pages:
+	1) Please ensure all your commits are made and features are fully built aswell as tested
+	2) Run "npm run deploy" from the terminal
+
+
+## License
+MIT
+
+
+## The Author
+Micah Hack currently resides in Poland and can be connected with on the below socials:
+
+- Micah.Hack.18@gmail.com
+- https://www.linkedin.com/in/micah-hack-5093a5342/
+- https://github.com/MicahHack
