@@ -20,7 +20,7 @@ export default function LoadingFilters() {
                     <div className="me-2">
                         <Shimmer shimmerConfig={buttonShimmer}></Shimmer>
                     </div>
-                    <div className="ms-2">
+                    <div className="ms-2 my-4">
                      <Shimmer shimmerConfig={buttonShimmer}></Shimmer>
                     </div>
                 </div>

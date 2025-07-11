@@ -60,13 +60,24 @@ export default function Filters() {
     }
 
     async function retrieveQuote() {
-        transitionSection(3);
-        let selectedTestament = testament.find((item) => item.active);
-        let selectedType = type.find((item) => item.active);
-        let availableQuotes = await filterAvailableQuotes(selectedTestament.text, selectedType.text);
-        let selectedQuote = await getBibleQuote(availableQuotes[Math.floor(Math.random() * availableQuotes.length + 1)].reference);
-        setQuote({ reference: selectedQuote.reference, text: selectedQuote.text });
-        transitionSection(4);
+        try {
+            transitionSection(3);
+            let selectedTestament = testament.find((item) => item.active);
+            let selectedType = type.find((item) => item.active);
+            let availableQuotes = await filterAvailableQuotes(selectedTestament.text, selectedType.text);
+            let selectedQuote = await getBibleQuote(availableQuotes[Math.floor(Math.random() * availableQuotes.length + 1)].reference);
+            if (selectedQuote.success) {
+                setQuote({ reference: selectedQuote.data.reference, text: selectedQuote.data.text });
+            }
+            if (!selectedQuote.success) {
+                setQuote({ reference: "Sorry :(", text: "We failed to get a quote at the moment, please try again!" });
+            }
+            transitionSection(4);
+        }
+        catch (error) {
+            console.log(error);
+            transitionSection(4);
+        }
     }
 
     useEffect(() => {
@@ -74,7 +85,6 @@ export default function Filters() {
         filtersContainer.current.style.opacity = filtersContainerOpacity.current;
         // scroll event listener for fading filters in/out
         document.addEventListener("scroll", () => {
-            console.log(window.scrollY);
             if (window.scrollY > 505) {
                 requestAnimationFrame(() => { animateFiltersComponent(true) });
             }
@@ -124,7 +134,7 @@ export default function Filters() {
                                         return <button key={item.id} type="button" className={`btn ${item.active ? "btn-dark" : "btn-light"} m-2 m-md-3`} onClick={() => updateType(item.id)}>{item.text}</button>
                                     })}
                             </div>
-                                <div className="d-flex flex-row justify-content-center align-items-center my-5">
+                                <div className="d-flex flex-row justify-content-center align-items-center my-4">
                                 <button type="button" className={`btn btn-outline-secondary rounded-circle mx-3`} onClick={() => transitionSection(1) }>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                                             <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
@@ -152,7 +162,7 @@ export default function Filters() {
                             <div className="col d-flex flex-column align-items-center text-center">
                                 <h2>{ quote.reference }</h2>
                                 <p>{ quote.text }</p>
-                                <div className="d-flex flex-row justify-content-center align-items-center my-5">
+                                <div className="d-flex flex-row justify-content-center align-items-center my-4">
                                     <button type="button" className={`btn btn-outline-secondary rounded-circle mx-3`} onClick={() => { transitionSection(2) }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                                             <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />

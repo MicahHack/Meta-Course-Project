@@ -1,10 +1,7 @@
 import ShimmerConfig from './../../models/ShimmerConfig.js';
 
 export default function Shimmer({ shimmerConfig }) {
-    if (shimmerConfig instanceof ShimmerConfig) {
-        console.log("shimmer config is right: " + shimmerConfig);
-    }
-    else {
+    if (!(shimmerConfig instanceof ShimmerConfig)) {
         shimmerConfig = new ShimmerConfig();
     }
 
