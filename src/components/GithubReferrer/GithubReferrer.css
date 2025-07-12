@@ -1,0 +1,14 @@
+.githubContainer {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.githubContainer:hover {
+    color: black;
+}
+
+.githubContainer #ghlogo {
+    transition: all 0.4s ease-in-out;
+}
+.githubContainer:hover #ghlogo {
+    fill: black;
+}
