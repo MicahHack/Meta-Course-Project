@@ -12,8 +12,16 @@ JESUS IS KING! and this project exists simply to glorify the name of Jesus.
 
 
 ## How it works
-1) Step one tries to narrow down the type of quote a user is looking for based off of emotion and bible testament
-2) Step two involves filtering the available hardcoded quotes to randomly return one of the quotes that have matched
+1) Narrow down the type of quote a user is looking for based off of emotion/type and bible testament they selected
+2) Filter the available hardcoded quote references for a random but single reference to a quote matching user expectation
+3) Fetch the quote from a 3rd party API (https://bible-api.com/)
+4) Display the reference and the full quotation to the user
+
+### Considerations
+- The httpGet method found in the HttpService.js file is setup to timeout after 5 seconds in order to address situations of poor/no internet connectivity and failure to complete fetching a quote
+- If a timeout occurs, an apologetic message will be displayed to the user prompting them to try again
+- All quote references used for filtering are manually hardcoded, so adding new quotes or categories currently requires updating the bibleQuotes variable within the BibleService.js file
+- The project depends on a 3rd party API (https://bible-api.com/) which could affect project performance or functionality if it's removed in the future with no fallback system implemented
 
 
 ## Getting started
