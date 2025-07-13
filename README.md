@@ -37,3 +37,10 @@ Micah Hack currently resides in Poland and can be connected with on the below so
 - Micah.Hack.18@gmail.com
 - https://www.linkedin.com/in/micah-hack-5093a5342/
 - https://github.com/MicahHack
+
+
+## Future Additions
+- Stripe for donations
+- Additional types
+- Additional quotes
+- Consider adding an option to filter by book
