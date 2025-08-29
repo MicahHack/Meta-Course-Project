@@ -102,7 +102,7 @@ export default function Filters() {
                     {step == 1 &&
                         <>
                         <div className="col-12 col-md-6 text-center mb-5 mb-md-0">
-                            <img src="Testimonials.png" alt="" style={{ height: "350px", width: "350px", borderRadius: "7px" }} />
+                            <img src="Testimonials.png" alt="" style={{ height: "350px", maxWidth: "350px", borderRadius: "7px" }} className="col-12" />
                         </div>
                         <div className="col-12 col-md-6 d-flex flex-column align-items-center">
                             <h2>Testaments</h2>
@@ -125,7 +125,7 @@ export default function Filters() {
                     {(step == 2) &&
                         <>
                         <div className="col-12 col-md-6 text-center mb-5 mb-md-0">
-                                <img src="Type.png" style={{ height: "350px", width: "300px", borderRadius: "7px" }} />
+                                <img src="Type.png" style={{ height: "350px", maxWidth: "300px", borderRadius: "7px" }} className="col-12" />
                             </div>
                         <div className="col-12 col-md-6 d-flex flex-column align-items-center">
                                 <h2>Type</h2>
@@ -157,7 +157,7 @@ export default function Filters() {
                     {(step == 4) &&
                         <>
                             <div className="col text-center mb-5 mb-md-0">
-                                <img src="JesusBlackandWhite.jpg" style={{ height: "380px", width: "300px", borderRadius: "7px" }} />
+                                <img src="JesusBlackandWhite.jpg" style={{ height: "380px", maxWidth: "300px", borderRadius: "7px" }} className="col-12" />
                             </div>
                             <div className="col d-flex flex-column align-items-center text-center">
                                 <h2>{ quote.reference }</h2>
