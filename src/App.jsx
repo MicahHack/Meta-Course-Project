@@ -2,6 +2,7 @@ import './App.css';
 import Filters from './components/Filters/Filters.jsx';
 import JesusCross from './components/JesusCross/JesusCross.jsx';
 import GithubReferrer from './components/GithubReferrer/GithubReferrer.jsx';
+import DonateButton from './components/DonateButton/DonateButton';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
             <JesusCross />
             <h1 className="fw-bold text-white">JESUS IS KING!</h1>
           </div>
-        <Filters />
+          <Filters />
+          <DonateButton />
     </>
   )
 }
