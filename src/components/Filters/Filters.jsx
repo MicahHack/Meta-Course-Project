@@ -156,10 +156,10 @@ export default function Filters() {
                     {/* Results section */}
                     {(step == 4) &&
                         <>
-                            <div className="col text-center mb-5 mb-md-0">
+                            <div className="col-12 col-md-6 text-center mb-5 mb-md-0">
                                 <img src="JesusBlackandWhite.jpg" style={{ height: "380px", maxWidth: "300px", borderRadius: "7px" }} className="col-12" />
                             </div>
-                            <div className="col d-flex flex-column align-items-center text-center">
+                            <div className="col-12 col-md-6 d-flex flex-column align-items-center text-center">
                                 <h2>{ quote.reference }</h2>
                                 <p>{ quote.text }</p>
                                 <div className="d-flex flex-row justify-content-center align-items-center my-4">

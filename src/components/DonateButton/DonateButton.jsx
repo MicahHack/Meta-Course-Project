@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import './DonateButton.css';
-import { getIpInformation } from './../../services/LocationService';
+import { getIpv4Country } from './../../services/LocationService';
 
 export default function DonateButton() {
     const [donationsUrl, setDonationsUrl] = useState("https://buy.stripe.com/aFadRb9QcapebwfbnieIw00");
     useEffect(() => {
         async function getCountry() {
-            debugger;
-            let result = await getIpInformation();
+            let result = await getIpv4Country();
             if (result.success) {
                 if (result.data.country === "South Africa") {
                     await setDonationsUrl("https://donate.stripe.com/fZu8wRd2oeFu6bV1MIeIw01");
