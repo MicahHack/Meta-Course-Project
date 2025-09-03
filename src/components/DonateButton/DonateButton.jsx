@@ -6,11 +6,9 @@ export default function DonateButton() {
     const [donationsUrl, setDonationsUrl] = useState("https://buy.stripe.com/aFadRb9QcapebwfbnieIw00");
     useEffect(() => {
         async function getCountry() {
-            let result = await getIpv4Country();
-            if (result.success) {
-                if (result.data.country === "South Africa") {
-                    await setDonationsUrl("https://donate.stripe.com/fZu8wRd2oeFu6bV1MIeIw01");
-                }
+            let ipCountry = await getIpv4Country();
+            if (ipCountry && ipCountry === "South Africa") {
+                await setDonationsUrl("https://donate.stripe.com/fZu8wRd2oeFu6bV1MIeIw01");
             }
         }
         getCountry();

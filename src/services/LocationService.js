@@ -1,22 +1,16 @@
 import { httpGet } from './../services/HttpService';
-import HttpResponse from './../models/HttpResponse';
 
 export async function getIpv4Country() {
-    try {
-        // Retrieve all IP information and extract country string if fetch status is successful
-        const response = await httpGet("http://ip-api.com/json");
-        if (response.success) {
-            let ipApiStatus = response.data.status;
-            if (ipApiStatus === "success") {
-                return response;
-            }
-            else {
-                return new HttpResponse(false, null);
-            }
+    // Retrieve all IP information and extract country string if fetch status is successful
+    const response = await httpGet("https://free.freeipapi.com/api/json/");
+    if (response.success) {
+        let ipApiCountry = response.data.countryName;
+        if (ipApiCountry.length > 0) {
+            return ipApiCountry;
         }
-        return new HttpResponse(false, null);
+        else {
+            return null;
+        }
     }
-    catch (error) {
-        return new HttpResponse(false, error);
-    }
+    return null;
 }
